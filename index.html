@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beginner-friendly social media content calendar planner.">
+  <title>Social Media Content Calendar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">DIGITAL MARKETING PLANNER</p>
+      <h1>Social Media <span>Content Calendar</span></h1>
+      <p>Plan your posts, organize ideas, and keep your brand consistent.</p>
+    </div>
+    <div class="hero-mark" aria-hidden="true">✦</div>
+  </header>
+
+  <main class="container">
+    <section class="stats" aria-label="Calendar summary">
+      <article class="stat-card"><span>Total posts</span><strong id="totalCount">0</strong></article>
+      <article class="stat-card"><span>Scheduled</span><strong id="scheduledCount">0</strong></article>
+      <article class="stat-card"><span>Published</span><strong id="publishedCount">0</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR WORKSPACE</p><h2>Add a content idea</h2></div>
+        <p class="muted">Fields marked * are required.</p>
+      </div>
+      <form id="postForm">
+        <div class="form-grid">
+          <label>Post title *<input id="title" name="title" placeholder="e.g. 3 ways to style a kurti" required maxlength="80"></label>
+          <label>Platform *
+            <select id="platform" name="platform" required>
+              <option value="Instagram">Instagram</option><option value="Facebook">Facebook</option>
+              <option value="LinkedIn">LinkedIn</option><option value="X">X (Twitter)</option>
+            </select>
+          </label>
+          <label>Publish date *<input id="date" name="date" type="date" required></label>
+          <label>Content type *
+            <select id="type" name="type" required>
+              <option>Educational</option><option>Promotional</option><option>Engagement</option>
+              <option>Reel / Video</option><option>Behind the scenes</option><option>Testimonial</option>
+            </select>
+          </label>
+          <label class="full">Caption / idea<textarea id="caption" name="caption" rows="3" placeholder="Write a caption or a short idea..."></textarea></label>
+          <label class="full">Hashtags<input id="hashtags" name="hashtags" placeholder="#DigitalMarketing #ContentPlanning"></label>
+        </div>
+        <button class="primary-btn" type="submit">＋ Add to calendar</button>
+        <p id="formMessage" class="form-message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading calendar-heading">
+        <div><p class="eyebrow">CONTENT OVERVIEW</p><h2>Your planned posts</h2></div>
+        <div class="filters">
+          <label class="filter-label" for="filterPlatform">Platform</label>
+          <select id="filterPlatform"><option value="All">All platforms</option><option>Instagram</option><option>Facebook</option><option>LinkedIn</option><option>X</option></select>
+          <label class="filter-label" for="filterStatus">Status</label>
+          <select id="filterStatus"><option value="All">All statuses</option><option>Scheduled</option><option>Published</option></select>
+        </div>
+      </div>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">✎</div><h3>Your calendar is ready</h3>
+        <p>Add your first content idea using the form above.</p>
+      </div>
+      <div id="postList" class="post-list"></div>
+    </section>
+    <p class="footer-note">Made for planning • Posts are saved in this browser using local storage.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
